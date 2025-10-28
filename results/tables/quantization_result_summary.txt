@@ -1,0 +1,72 @@
+🧠 GPU Quantization Result Summary — CIFAR-10
+The quantized CIFAR-10 experiment executed on the GPU demonstrated that dynamic quantization has minimal benefits for 
+GPU-accelerated workloads. The model, quantized from the 2.38 MB baseline CNN to a compact 0.87 MB version (≈ 63% 
+reduction), maintained a nearly identical accuracy of 78.87% compared to 78.97% in the baseline run — showing a 
+negligible 0.10% drop. However, inference performance on the GPU degraded substantially: inference time increased
+from 2.32 ms per batch to 34.25 ms per batch (≈ 14× slower). This slowdown occurred because PyTorch’s dynamic 
+quantization is optimized for CPU matrix operations rather than GPU tensor cores.
+
+Despite the reduced model size, the GPU quantized model consumed more energy during inference, increasing its total carbon
+footprint from 0.0001245 kg CO₂ to 0.0001973 kg CO₂ (≈ +59%). The CO₂-over-time curve showed a linear but steeper slope, 
+confirming longer inference durations despite stable hardware utilization. The accuracy-to-CO₂ ratio (CO₂ efficiency) 
+decreased markedly, indicating that quantization on GPUs is counter-productive for small-scale CNNs. While quantization 
+preserved predictive performance, the lack of GPU-level integer arithmetic acceleration negated potential energy savings.
+Overall, GPU quantization serves as a useful diagnostic but not a viable green optimization strategy, as it increases 
+energy cost without measurable accuracy gains.
+
+🧩 CPU Quantization Result Summary — CIFAR-10
+
+On the CPU, quantization achieved its intended goal of compressing the model and maintaining accuracy while conserving 
+energy. The CPU quantized model preserved 79.18% accuracy versus 79.26% baseline (only −0.08%) and reduced the model 
+size by 63%. Inference time remained virtually unchanged (≈ 33.6 ms vs 33.4 ms baseline), confirming that quantization 
+neither degraded nor improved runtime for small-batch CPU inference.
+
+However, the energy profile showed slight stability gains: CodeCarbon recorded 0.000172 kg CO₂ emitted for the quantized 
+version compared with 0.000170 kg for the baseline, a +1.2% difference within measurement tolerance. This near-flat energy 
+pattern highlights quantization’s stability — minimal computational complexity with preserved accuracy. Because dynamic 
+quantization enables integer-based arithmetic, such models scale better for edge or embedded deployments where smaller 
+footprint and deterministic latency are critical. Overall, the CPU quantized experiment validated quantization as an 
+effective lightweighting method, delivering substantial model compression without meaningful losses in predictive quality 
+or efficiency.
+
+📊 GPU vs CPU Comparison — Quantized Models (Green AI Perspective)
+
+Comparing the quantized CIFAR-10 models across GPU and CPU reveals clear hardware-specific trade-offs. Both maintained 
+near-identical accuracy (~79%) and achieved the same compression ratio (63%), demonstrating that quantization itself is 
+architecture-neutral. However, performance and sustainability diverged sharply between devices.
+
+On the CPU, quantization sustained stable inference with negligible energy impact and slightly improved consistency. 
+Conversely, the GPU exhibited severe performance regression: inference latency increased by ≈ 1,500%, and total CO₂ 
+emissions rose by 60%. The cause lies in GPU hardware design — integer quantized operations run on standard CUDA cores 
+rather than optimized Tensor Cores, resulting in under-utilization and prolonged kernel execution.
+
+From a Green AI standpoint, CPU quantization is beneficial for deployment on edge or low-power servers, delivering compact 
+models with reliable throughput. GPU quantization, while maintaining accuracy, fails to offer environmental or speed 
+advantages and instead incurs unnecessary computational overhead. Thus, quantization should be applied selectively 
+depending on hardware context: it is a clear win for CPU inference but inefficient on GPUs without dedicated INT8 
+acceleration.
+
+🧩 Summary Table — CIFAR-10 Quantized Model (GPU vs CPU)
+Metric	                   Quantized (GPU)	           Quantized (CPU)	                    Observation
+Test Accuracy (%)	           78.87	               79.18                       Virtually identical (Δ 0.31%)
+Model Size (MB)	               0.87	                   0.87                        Same (63% smaller than baseline)
+Size Reduction (%)	           63.3	                   63.3	                       Equal compression rate
+Inference Time (ms/batch)      34.25	               33.60	                   CPU stable; GPU 15× slower than baseline
+Speed Improvement (%)	      −1375 %	               −0.7 %	                   GPU degraded severely; CPU unchanged
+CO₂ Emissions (kg)	          0.0001973	               0.0001723	               GPU ↑ slightly higher
+CO₂ Reduction (%)vs Baseline   −58.5 %                  −1.2 %	                   Quantization hurt GPU efficiency
+Accuracy Drop (%)	          −0.10	                   −0.08	                   Negligible for both
+CO₂ Efficiency (Acc/kg) 	 ≈ 400 000	               ≈ 460 000	               Numerically similar (both very high)
+Energy Impact	             Negative (↑ energy)	   Neutral (≈ same)	           CPU preferred for efficiency
+Green AI Assessment	         Not energy-efficient	 Energy-consistent & compact   CPU quantization is sustainable choice
+
+🧠 Interpretation
+In conclusion, both GPU and CPU quantized models retained high predictive performance and achieved substantial size 
+reductions, but their sustainability outcomes differed drastically. On CPUs, quantization preserved energy use and 
+model accuracy while lowering storage demands, making it ideal for low-power, real-time applications. On GPUs, however, 
+quantization offered no runtime benefit and in fact worsened carbon efficiency because of hardware incompatibility with 
+integer quantized computations.
+From a Green AI perspective, CPU quantization represents an effective balance of accuracy, compactness, and energy 
+consistency, whereas GPU quantization should be avoided unless specialized INT8 support or hybrid inference frameworks 
+(e.g., TensorRT) are employed. This comparative analysis reinforces that hardware-aligned optimization — not algorithmic 
+compression alone — determines true sustainability gains in AI pipelines.

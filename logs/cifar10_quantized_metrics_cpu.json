@@ -1,0 +1,22 @@
+{
+    "experiment": "cifar10_quantized",
+    "device": "cpu",
+    "baseline": {
+        "accuracy": 79.26,
+        "model_size_mb": 2.3775863647460938,
+        "inference_time_ms": 34.39555306365524,
+        "co2_kg": 0.00016732390723738175
+    },
+    "quantized": {
+        "accuracy": 79.18,
+        "model_size_mb": 0.8716545104980469,
+        "inference_time_ms": 38.631128228229024,
+        "co2_kg": 6.0269298100962104e-06
+    },
+    "improvements": {
+        "accuracy_drop_pct": 0.0799999999999983,
+        "size_reduction_pct": 63.33868147030982,
+        "speed_improvement_pct": -12.314310389878248,
+        "co2_reduction_pct": 96.39804621491069
+    }
+}

@@ -1,0 +1,11 @@
+{
+    "experiment": "cifar10_pruned",
+    "experiment_type": "pruned",
+    "accuracy": 75.77,
+    "training_time_sec": 852.2249593734741,
+    "co2_kg": 0.02385377839242139,
+    "model_size_mb": 4.087780952453613,
+    "total_params": 1070794,
+    "device_used": "GPU",
+    "timestamp": "2025-10-21T11:50:23"
+}

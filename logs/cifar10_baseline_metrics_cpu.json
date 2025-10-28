@@ -1,0 +1,11 @@
+{
+    "experiment": "cifar10_baseline",
+    "experiment_type": "baseline",
+    "accuracy": 79.26,
+    "training_time_sec": 1424.5074696540833,
+    "co2_kg": 0.038969319558732576,
+    "model_size_mb": 2.3775863647460938,
+    "total_params": 620810,
+    "device_used": "CPU",
+    "timestamp": "2025-10-21T10:56:12.104051"
+}

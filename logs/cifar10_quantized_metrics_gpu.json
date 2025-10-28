@@ -1,0 +1,22 @@
+{
+    "experiment": "cifar10_quantized",
+    "device": "gpu",
+    "baseline": {
+        "accuracy": 78.97,
+        "model_size_mb": 2.3778305053710938,
+        "inference_time_ms": 2.3207837256832398,
+        "co2_kg": 0.00012450596356553911
+    },
+    "quantized": {
+        "accuracy": 78.87,
+        "model_size_mb": 0.8716545104980469,
+        "inference_time_ms": 34.245967864990234,
+        "co2_kg": 0.0001973144177656009
+    },
+    "improvements": {
+        "accuracy_drop_pct": 0.09999999999999432,
+        "size_reduction_pct": 63.34244562305281,
+        "speed_improvement_pct": -1375.6208209322995,
+        "co2_reduction_pct": -58.47788500647674
+    }
+}

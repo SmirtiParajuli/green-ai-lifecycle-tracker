@@ -1,0 +1,62 @@
+🧠GPU Training Result Summary — CIFAR-10 Baseline
+The baseline CIFAR-10 experiment trained on the GPU demonstrated strong overall performance and energy efficiency.Over 20 epochs, the model achieved
+a final test accuracy of 78.97%, showing steady improvement and convergence as the training loss decreased from roughly 1.6 to below 0.8. The accuracy
+and loss curves indicate a consistent learning trajectory, with the test accuracy slightly exceeding training accuracy, suggesting good generalization 
+and no significant overfitting. The total training time was approximately 780 seconds (≈13 minutes), and the recorded carbon footprint was 0.0218 kg CO₂,
+as measured by CodeCarbon. The CO₂ emissions curve shows a linear relationship with time, confirming stable energy consumption throughout the run. The 
+resulting model size was 2.38 MB, containing about 620 K parameters, making it both lightweight and efficient. The Green AI Efficiency summary highlights
+an excellent CO₂ efficiency ratio (accuracy per kg CO₂), reflecting how GPU acceleration can deliver high performance while maintaining relatively low
+energy cost. Overall, this baseline establishes a strong benchmark for comparing CPU and future optimized models (e.g., pruned or quantized variants).
+
+🧩 CPU Training Result Summary — CIFAR-10 Baseline
+The baseline CIFAR-10 experiment executed on the CPU achieved a comparable accuracy to the GPU run, reaching a final test accuracy of 79.26% after 20
+epochs. The accuracy and loss plots demonstrate consistent model convergence, with the training loss steadily decreasing from around 1.6 to below 0.8, 
+and the test accuracy improving smoothly across epochs. Similar to the GPU run, the test accuracy remains slightly higher than training accuracy,
+suggesting healthy generalization without overfitting. However, the CPU training required significantly longer computation time — approximately 1424 
+seconds (≈24 minutes) — which is nearly double that of the GPU. The carbon emissions totaled 0.0390 kg CO₂, nearly twice the GPU’s footprint, due to 
+prolonged training duration despite lower instantaneous power draw. The CO₂ vs. time plot maintains a linear trend, confirming steady energy consumption.
+Model size and architecture remained identical to the GPU version (2.38 MB, 620 K parameters). While both CPU and GPU achieved similar accuracy, the
+GPU demonstrated superior energy efficiency and shorter runtime, resulting in a higher CO₂ efficiency ratio. Overall, the CPU baseline highlights the
+trade-off between accessibility and performance — proving functional for small-scale tasks but less sustainable for prolonged or large-scale deep
+learning workloads.
+
+📊 GPU vs CPU Comparison — CIFAR-10 Baseline (Green AI Perspective)
+
+The CIFAR-10 baseline experiments performed on GPU and CPU delivered nearly identical accuracy levels but revealed major differences in computational 
+efficiency, energy usage, and carbon footprint. Both models were trained for 20 epochs using the same architecture, dataset, and hyperparameters, 
+resulting in consistent learning behavior and convergence. The GPU-based training achieved a final test accuracy of 78.97%, while the CPU-based training 
+slightly surpassed it with 79.26%, demonstrating minimal variation and confirming that hardware choice did not impact predictive performance.
+
+In terms of computational speed, the GPU completed training in approximately 780 seconds (≈13 minutes), whereas the CPU required 1424 seconds 
+(≈24 minutes) — nearly 1.8× longer. Despite its higher instantaneous power consumption, the GPU’s massive parallelization capability allowed it 
+to complete training much faster, significantly lowering total energy use. This difference was reflected in the measured CO₂ emissions: the GPU 
+generated 0.0218 kg CO₂, compared to the CPU’s 0.0390 kg CO₂, an ~45% reduction in overall carbon output.
+
+Both models exhibited smooth convergence patterns — the training loss declined steadily from about 1.6 to below 0.8, and accuracy increased consistently 
+across epochs. The CO₂ emission-over-time plots for both hardware setups followed a linear growth pattern, indicating steady energy utilization without 
+spikes or instability. The model size and total parameters remained constant across both runs (2.38 MB and ~620K parameters), confirming that variations 
+stem solely from hardware efficiency rather than algorithmic differences.
+
+From a Green AI perspective, the GPU configuration demonstrated far greater sustainability by achieving similar or better performance in nearly half the 
+time and with a markedly smaller carbon footprint. The CO₂ efficiency ratio (accuracy per kg CO₂) of the GPU was significantly higher than the CPU’s, 
+reaffirming that GPU acceleration offers a more environmentally responsible and computationally efficient approach for deep learning workloads. 
+Conversely, the CPU setup remains valuable for accessibility and smaller-scale training, though it is less optimal for energy-aware AI development.
+
+🧩 Summary Table — CIFAR-10 Baseline Model (GPU vs CPU)
+Metric	                            Baseline (GPU)	B                   aseline (CPU)	                   Observation
+Test Accuracy (%)	                    78.97	                            79.26	                  Nearly identical (+0.3% CPU)
+Training Time (s)	                    780.0	                            1424.0	                  CPU took ~1.8× longer
+CO₂ Emissions (kg)	                    0.0218	                            0.0390	                  CPU emitted ~45% more CO₂
+CO₂ Efficiency (Acc/kg)	                ~3620	                            ~2030	                  GPU more carbon-efficient
+Model Size (MB)	                        2.38	                            2.38	                  Identical architecture
+Total Parameters	                    ~620,000	                        ~620,000	              Identical
+Learning Curve	                        Smooth,stable                       Smooth,stable             Both converged well
+Power Trend                         	Linear, steady	                Linear, longer duration	      GPU more efficient overall
+
+🧠 Interpretation
+
+In conclusion, while both baseline models achieved similar accuracy, the GPU-trained version outperformed the CPU in speed, energy efficiency, and 
+carbon sustainability. GPU acceleration completed training almost twice as fast and with less than half the CO₂ emissions, making it substantially
+greener and more scalable. The CPU run, while slightly slower and more emission-intensive, demonstrates the feasibility of deep learning on accessible 
+hardware — albeit with higher environmental cost. Overall, this comparison highlights how hardware optimization alone can meaningfully improve AI 
+sustainability, even before introducing techniques like pruning or quantization.

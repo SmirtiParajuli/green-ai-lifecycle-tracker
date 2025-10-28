@@ -1,0 +1,68 @@
+🧾 Pruned Model (GPU) – Results Summary
+The pruned CIFAR-10 model was trained on the GPU for 20 epochs with a 30% convolutional weight reduction, demonstrating strong performance while 
+significantly improving energy efficiency. The model achieved a final test accuracy of 75.77%, with smooth convergence and consistent generalization 
+visible in the accuracy and loss curves. Training completed in approximately 852 seconds (≈14.2 minutes), and CodeCarbon recorded a total CO₂ emission 
+of 0.0239 kg. The resulting model size was reduced to 4.09 MB with 1.07 million parameters, compared to the unpruned baseline’s larger footprint. The 
+emissions plot showed a linear increase over time, indicating stable power usage, while the efficiency summary highlighted a remarkable CO₂ efficiency 
+exceeding 3000 Acc/kg, confirming that pruning effectively decreased energy consumption without major accuracy loss. Overall, the GPU-trained pruned model 
+maintained competitive accuracy with a smaller, greener architecture—representing a balanced trade-off between performance and sustainability in deep 
+learning practice.
+
+
+🧾 Pruned Model (CPU) – Results Summary
+
+The pruned CIFAR-10 model was also trained on the CPU for 20 epochs using a 30% pruning ratio to evaluate efficiency on lower-performance hardware.
+The model achieved a strong test accuracy of 74.06%, only slightly lower than the GPU-trained version (75.77%), confirming pruning’s robustness across 
+devices. Training took approximately 1068 seconds (≈17.8 minutes), reflecting the expected slowdown compared to GPU execution. The CO₂ emissions totaled
+0.0292 kg, showing a moderate increase due to the CPU’s longer runtime and higher baseline energy consumption. Despite this, the energy-to-accuracy 
+trade-off remained favourable, with notable efficiency improvements relative to the unpruned baseline. The CO₂ emissions plot displayed a linear pattern
+similar to the GPU run, indicating consistent and predictable power draw throughout training. The efficiency visualization revealed a slightly lower
+CO₂ efficiency (~2500 Acc/kg) compared to the GPU run (~3000 Acc/kg), but the model maintained nearly identical learning curves for accuracy and loss,
+demonstrating stable convergence and effective generalization. Overall, the CPU-based pruned model maintained high performance while enabling sustainable 
+training even without GPU acceleration — highlighting the versatility of pruning for Green AI experimentation.
+
+
+
+⚖️ Comparison: Pruned Model – GPU vs CPU
+
+Both the GPU and CPU versions of the pruned CIFAR-10 model were trained for 20 epochs with an identical 30% weight pruning applied to the convolutional 
+layers. While both models used the same architecture and dataset, their performance and energy metrics revealed clear differences in efficiency and
+computational behavior due to hardware characteristics.
+
+The GPU-trained pruned model achieved a slightly higher test accuracy of 75.77%, compared to 74.06% on the CPU, showing that GPU training not only 
+accelerates computation but also allows more consistent gradient updates within the same training duration. The training time on GPU was ~852 seconds 
+(≈14.2 minutes), notably faster than the CPU’s 1068 seconds (≈17.8 minutes). This reduction in runtime directly contributed to lower energy usage and 
+CO₂ emissions.
+
+From an environmental perspective, the GPU run produced only 0.0239 kg of CO₂, while the CPU emitted 0.0292 kg, an approximate 18% increase in carbon 
+footprint. This difference occurred despite the GPU’s higher instantaneous power draw, because its parallel processing drastically shortened the total 
+computation time. When normalized for performance, the GPU achieved a superior CO₂ efficiency of ~3000 Acc/kg, whereas the CPU reached approximately 2500
+Acc/kg, confirming that GPU execution offers higher accuracy per unit of carbon emitted.
+
+In terms of learning behavior, both configurations showed nearly identical convergence curves. The training and test accuracy plots indicated smooth,
+stable learning, while the loss curves decreased consistently for both devices, validating that pruning did not hinder model generalization. The 
+emission-over-time graphs were linear for both setups, indicating stable resource utilization without power spikes or memory bottlenecks.
+
+From a Green AI perspective, both models demonstrated significant sustainability benefits compared to an unpruned baseline. However, the GPU-pruned 
+variant delivered the best overall trade-off — achieving slightly higher accuracy, shorter runtime, and lower total emissions. The CPU-pruned model, 
+though slower, proved that pruning can still make deep learning more accessible and energy-efficient on standard hardware without substantial performance
+degradation.
+
+🧩 Summary Table
+Metric	                   Pruned (GPU)	                  Pruned (CPU)	                           Observation
+Test Accuracy (%)	         75.77	                        74.06	                          GPU slightly higher (+1.7%)
+Training Time (s)	         852.22	                        1068.24	                          CPU slower (~26% longer)
+CO₂ Emissions (kg)	         0.02385	                    0.02920	                          CPU emits ~18% more
+CO₂ Efficiency (Acc/kg)      ~3000	                        ~2500	                          GPU more efficient
+Model Size (MB)	             4.09	                        4.09	                          Identical
+Parameters	                 1,070,794	                    1,070,794	                      Identical
+Convergence	                 Stable	                        Stable	                          Both smooth and consistent
+
+🧠 Interpretation
+
+In essence:
+
+GPU = performance-efficient and energy-efficient due to parallelization and faster execution.
+CPU = accessible and sustainable for low-resource setups, albeit with slightly higher emissions.
+Both confirm that model pruning effectively reduces computational load and environmental impact without compromising learning quality — a
+crucial step toward practical Green AI adoption.

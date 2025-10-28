@@ -1,0 +1,16 @@
+{
+    "best_trial_number": 9,
+    "best_params": {
+        "lr": 0.007965993335008598,
+        "batch_size": 64,
+        "weight_decay": 0.0003331626721356601,
+        "dropout": 0.682832350390344
+    },
+    "best_accuracy": 59.01,
+    "best_co2_kg": 0.0004169965470730886,
+    "best_training_time": 433.24535846710205,
+    "n_trials": 30,
+    "n_completed": 30,
+    "n_pruned": 0,
+    "timestamp": "2025-10-22T23:47:20.181663"
+}
