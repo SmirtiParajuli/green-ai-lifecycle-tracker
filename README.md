@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🌿 Green AI Lifecycle Tracker
+#  Green AI Lifecycle Tracker
 
 ### *Reducing AI Training Emissions by 99.97% Through Model Optimization*
 
@@ -11,13 +11,13 @@
 
 *Making artificial intelligence sustainable without sacrificing performance*
 
-[📊 View Results](#-key-results) • [🚀 Quick Start](#-quick-start) • [📄 Research Paper](link-to-pdf) • [👤 About](#-author)
+[ View Results](#-key-results) • [ Quick Start](#-quick-start) • [ Research Paper](link-to-pdf) • [ About](#-author)
 
 </div>
 
 ---
 
-## 📋 Table of Contents
+##  Table of Contents
 
 - [Overview](#-overview)
 - [The Problem](#-the-problem)
@@ -36,29 +36,29 @@
 
 ---
 
-## 🎯 Overview
+## Overview
 
-**Green AI Lifecycle Tracker** is a research project that demonstrates how model optimization techniques can dramatically reduce the carbon footprint of deep learning systems while maintaining competitive accuracy.
+** Green AI Lifecycle Tracker** is a research project that demonstrates how model optimization techniques can dramatically reduce the carbon footprint of deep learning systems while maintaining competitive accuracy.
 
 By applying **pruning** and **quantization** to convolutional neural networks, this project achieved:
 
-- ✅ **99.97% reduction in CO₂ emissions**
-- ✅ **78.87% accuracy** (only 0.1% below baseline)
-- ✅ **63% smaller model size** (2.38 MB → 0.87 MB)
-- ✅ **4000× improvement in carbon efficiency**
+-  **99.97% reduction in CO₂ emissions**
+-  **78.87% accuracy** (only 0.1% below baseline)
+-  **63% smaller model size** (2.38 MB → 0.87 MB)
+-  **4000× improvement in carbon efficiency**
 
 This work proves that high-performance AI can be environmentally responsible.
 
 ---
 
-## 🌍 The Problem
+##  The Problem
 
 Modern deep learning models require enormous computational resources:
 
-- 🏭 Training one large language model emits **as much CO₂ as 5 cars over their lifetime**
-- ⚡ AI workloads account for a growing share of global energy consumption
-- 💰 Cloud computing costs for AI training continue to skyrocket
-- 🌡️ The environmental impact of AI threatens broader climate goals
+-  Training one large language model emits **as much CO₂ as 5 cars over their lifetime**
+-  AI workloads account for a growing share of global energy consumption
+-  Cloud computing costs for AI training continue to skyrocket
+-  The environmental impact of AI threatens broader climate goals
 
 **The Question:** Can we make AI sustainable without losing performance?
 
@@ -66,11 +66,11 @@ Modern deep learning models require enormous computational resources:
 
 ---
 
-## 📊 Key Results
+##  Key Results
 
 ### Visual Comparison
 
-![Green AI Comparison](results/comparison_chart.png)
+[Green AI Comparison](results/comparison_chart.png)
 
 *Dynamic comparison of accuracy and CO₂ emissions across baseline, pruned, and quantized models*
 
@@ -85,7 +85,7 @@ Modern deep learning models require enormous computational resources:
 | **Quantized** | GPU | **78.87%** | **0.000197** | **99.1%** ↓ | **0.87 MB** | **400,000 Acc/kg** |
 | **Quantized** | CPU | **79.18%** | **0.000006** | **99.98%** ↓ | **0.87 MB** | **13,000,000 Acc/kg** |
 
-### 🎯 Breakthrough Finding
+###  Breakthrough Finding
 
 **Quantization achieved near-baseline accuracy (78.87% vs 78.97%) while reducing emissions by 99.97%**
 
@@ -93,24 +93,24 @@ This represents a **4000× improvement** in carbon efficiency compared to standa
 
 ---
 
-## 🔬 Methodology
+##  Methodology
 
 ### Experimental Design
 
 Three optimization strategies were evaluated on the **CIFAR-10 dataset** (60,000 images, 10 classes):
 
-#### 1️⃣ Baseline (Control)
+#### Baseline (Control)
 - Standard full-precision (FP32) training
 - Reference point for accuracy and emissions
 - Trained on both GPU and CPU for comparison
 
-#### 2️⃣ Pruning
+#### Pruning
 - **30% weight sparsity** applied to convolutional layers
 - Magnitude-based unstructured pruning
 - Reduces computational load during inference
 - Accuracy trade-off: -3% to -5%
 
-#### 3️⃣ Quantization
+#### Quantization
 - **Post-training quantization** (FP32 → INT8)
 - Converts weights to 8-bit integers
 - Dramatically reduces memory bandwidth and energy
@@ -118,10 +118,10 @@ Three optimization strategies were evaluated on the **CIFAR-10 dataset** (60,000
 
 ### Evaluation Metrics
 
-- 📈 **Test Accuracy** - Model performance on held-out data
-- 🌍 **CO₂ Emissions** - Total carbon footprint (tracked with CodeCarbon)
-- 💾 **Model Size** - Storage requirements in MB
-- ⚡ **Carbon Efficiency** - Accuracy per kg CO₂ (higher is better)
+-  **Test Accuracy** - Model performance on held-out data
+-  **CO₂ Emissions** - Total carbon footprint (tracked with CodeCarbon)
+-  **Model Size** - Storage requirements in MB
+-  **Carbon Efficiency** - Accuracy per kg CO₂ (higher is better)
 
 ### Hardware
 
@@ -131,7 +131,7 @@ Three optimization strategies were evaluated on the **CIFAR-10 dataset** (60,000
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 ```
 green-ai-lifecycle-tracker/
 │
@@ -169,7 +169,7 @@ green-ai-lifecycle-tracker/
 
 ---
 
-## 💻 Installation
+##  Installation
 
 ### Prerequisites
 
@@ -209,7 +209,7 @@ numpy>=1.24.0
 
 ---
 
-## 🚀 Quick Start
+##  Quick Start
 
 ### Run Baseline Experiment
 ```bash
@@ -247,7 +247,7 @@ python src/visualize_experiment.py
 
 ---
 
-## 🧪 Experiments
+##  Experiments
 
 ### 1. Baseline Training
 
@@ -296,28 +296,28 @@ python src/hpo_energy.py --trials 30
 
 ---
 
-## 📈 Results Analysis
+##  Results Analysis
 
 ### Key Findings
 
-#### 🏆 Quantization Wins
+####  Quantization Wins
 
 Quantization emerged as the **clear winner** across all metrics:
 
-- ✅ **Highest accuracy retention:** 99.9% of baseline
-- ✅ **Lowest emissions:** 99.97% reduction
-- ✅ **Smallest model:** 63% size reduction
-- ✅ **Best efficiency:** 4000× improvement
+-  **Highest accuracy retention:** 99.9% of baseline
+-  **Lowest emissions:** 99.97% reduction
+-  **Smallest model:** 63% size reduction
+-  **Best efficiency:** 4000× improvement
 
-#### ⚖️ Pruning Trade-offs
+####  Pruning Trade-offs
 
 Pruning showed moderate gains:
 
-- ⚠️ **Accuracy drop:** 3-5% below baseline
-- ✅ **Faster inference:** 25% runtime reduction on CPU
-- ⚠️ **Limited size reduction:** Sparse tensors increase serialized size
+-  **Accuracy drop:** 3-5% below baseline
+-  **Faster inference:** 25% runtime reduction on CPU
+-  **Limited size reduction:** Sparse tensors increase serialized size
 
-#### 💡 Device Comparison
+####  Device Comparison
 
 - **GPU:** Faster training, lower absolute emissions
 - **CPU:** Higher emissions but quantization still achieves 99.98% reduction
@@ -326,21 +326,21 @@ Pruning showed moderate gains:
 ```
 Baseline:  ~3,620 Accuracy / kg CO₂
 Pruned:    ~3,170 Accuracy / kg CO₂  (12% worse)
-Quantized: ~400,000 Accuracy / kg CO₂ (11,000% better! 🎉)
+Quantized: ~400,000 Accuracy / kg CO₂ (11,000% better! )
 ```
 
 ---
 
-## 🌍 Real-World Impact
+##  Real-World Impact
 
 ### Environmental Benefits
 
 If applied to production AI systems:
 
-- 🌳 **Equivalent to planting 500+ trees** per model
-- ⚡ **50%+ reduction in cloud computing costs**
-- 🏭 **Near-zero carbon footprint** for inference
-- 🌎 **Scalable to billions of edge devices**
+-  **Equivalent to planting 500+ trees** per model
+-  **50%+ reduction in cloud computing costs**
+-  **Near-zero carbon footprint** for inference
+-  **Scalable to billions of edge devices**
 
 ### Applications
 
@@ -366,7 +366,7 @@ If applied to production AI systems:
 
 ---
 
-## 🛠️ Technologies
+##  Technologies
 
 ### Core Frameworks
 
@@ -389,7 +389,7 @@ If applied to production AI systems:
 
 ---
 
-## 🔮 Future Work
+##  Future Work
 
 ### Short-term (Next 3 months)
 
@@ -409,7 +409,7 @@ If applied to production AI systems:
 
 ---
 
-## 👤 Author
+##  Author
 
 **Smriti Parajuli**
 
@@ -430,7 +430,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-## 🙏 Acknowledgments
+##  Acknowledgments
 
 - CIFAR-10 dataset provided by the Canadian Institute for Advanced Research
 - CodeCarbon for making carbon tracking accessible
@@ -439,7 +439,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-## 📚 Citation
+##  Citation
 
 If you use this work in your research, please cite:
 ```bibtex
@@ -454,15 +454,15 @@ If you use this work in your research, please cite:
 
 ---
 
-## 📞 Get in Touch
+##  Get in Touch
 
 Interested in sustainable AI or have questions about this work?
 
-- 💬 Open an [Issue](https://github.com/YourUsername/green-ai-lifecycle-tracker/issues)
-- 📧 Email me directly
-- 🤝 Connect on [LinkedIn](https://linkedin.com/in/smirti-parajuli-84128b1a7)
+-  Open an [Issue](https://github.com/YourUsername/green-ai-lifecycle-tracker/issues)
+- Email me directly
+-  Connect on [LinkedIn](https://linkedin.com/in/smirti-parajuli-84128b1a7)
 
-**Let's build a greener future for AI together! 🌿**
+**Let's build a greener future for AI together! **
 
 ---
 
